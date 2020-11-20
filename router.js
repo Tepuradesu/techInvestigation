@@ -1,7 +1,8 @@
-function route(handle,pathname,response){
+function route(handle,pathname,response,postData){
  console.log("About to route a request for" + pathname);
+ //funtionオブジェクトの場合はresponseオブジェクトを引数にリクエストハンドラを呼ぶ。
  if (typeof handle[pathname] === 'function') {
-   handle[pathname]();
+   handle[pathname](response,postData);
  }else {
     console.log("No request handler found for " + pathname);
     response.writeHead(404, {"Content-Type": "text/plain"});
@@ -10,4 +11,4 @@ function route(handle,pathname,response){
  }
 }
 
-exports.route = route ;
+exports.route = route;
