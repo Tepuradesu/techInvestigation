@@ -8,6 +8,7 @@ handle["/"] = requestHandlers.start;
 handle["/start"] = requestHandlers.start;
 handle["/upload"] = requestHandlers.upload;
 handle["/media"] = requestHandlers.media;
+handle["/show"] = requestHandlers.show;
 
 
 //ルータモジュールとhandleオブジェクトを引数に渡す。
